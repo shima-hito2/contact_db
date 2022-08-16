@@ -6,12 +6,6 @@ if(!strstr($_SERVER['HTTP_REFERER'],'contact.php')){
   exit;
 }
 
-//  echo $_POST["namae"];
-//  echo $_POST["hurigana"];
-//  echo $_POST["tel"];
-//  echo $_POST["email"];
-//  echo nl2br($_POST["inquiry"]); 
-
  $link = "confirm.php";
 
  $pattern = "/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]+.[A-Za-z0-9]+$/";
@@ -74,8 +68,6 @@ if(!strstr($_SERVER['HTTP_REFERER'],'contact.php')){
   $_SESSION['tel'] = $_POST["tel"];
   $_SESSION['email'] = $_POST["email"];
   $_SESSION['inquiry'] = str_replace('<br>', '<br>', htmlspecialchars( $_POST['inquiry'] , ENT_QUOTES) ); 
-  // $_SESSION['inquiry'] = $_POST["inquiry"];
-
 
 
   header('Location: '.$link);
